@@ -28,12 +28,14 @@ class Movie {
     @ElementCollection(targetClass = Genre.class)
     List<Genre> genres;
 
-    @ManyToMany
-    @JoinTable(name = "MOVIE_DIRECTOR")
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "MOVIE_DIRECTOR", joinColumns = {@JoinColumn(name = "MOVIE_ID")},
+            inverseJoinColumns = {@JoinColumn(name = "DIRECTOR_ID")})
     List<Person> directors;
 
-    @ManyToMany
-    @JoinTable(name = "MOVIE_CAST")
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "MOVIE_CAST",joinColumns = {@JoinColumn(name = "MOVIE_ID")},
+            inverseJoinColumns = {@JoinColumn(name = "STAR_ID")})
     List<Person> cast;
 
 }

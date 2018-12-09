@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "PERSONS")
@@ -18,4 +19,10 @@ class Person {
     String lastName;
     Country country;
     String dateOfBirth;
+
+    @ManyToMany//(mappedBy = "directors")
+    List<Movie> directedMovies;
+
+    @ManyToMany//(mappedBy = "cast")
+    List<Movie> starredMovies;
 }
