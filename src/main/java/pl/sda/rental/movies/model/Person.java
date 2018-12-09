@@ -17,6 +17,7 @@ class Person {
 
     String name;
     String lastName;
+    @Enumerated(EnumType.STRING)
     Country country;
     String dateOfBirth;
 
