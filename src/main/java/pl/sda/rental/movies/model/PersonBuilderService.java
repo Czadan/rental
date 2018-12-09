@@ -1,6 +1,7 @@
 package pl.sda.rental.movies.model;
 
 
+import pl.sda.rental.movies.dto.CountryDto;
 import pl.sda.rental.movies.dto.PersonDto;
 
 
@@ -17,6 +18,17 @@ public class PersonBuilderService {
         person.setCountry(Country.valueOf(personDto.getCountry().name()));
         person.setDateOfBirth(personDto.getDateOfBirth());
         return person;
+    }
+    public PersonDto dtoFromEmtity(Person person){
+        PersonDto personDto = new PersonDto();
+
+        personDto.setId(person.getId().toString());
+        personDto.setName(person.getName());
+        personDto.setLastName(person.getLastName());
+        personDto.setDateOfBirth(person.getDateOfBirth());
+        personDto.setCountry(CountryDto.valueOf(person.getCountry().name()));
+
+        return personDto;
     }
 
 }
