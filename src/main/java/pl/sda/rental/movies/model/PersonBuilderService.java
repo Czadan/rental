@@ -6,15 +6,17 @@ import pl.sda.rental.movies.dto.PersonDto;
 
 public class PersonBuilderService {
 
-public Person entityFromDto(PersonDto personDto){
-    Person person = new Person();
+    public Person entityFromDto(PersonDto personDto) {
+        Person person = new Person();
 
-    person.setId(Long.valueOf(personDto.getId()));
-    person.setName(personDto.getName());
-    person.setLastName(personDto.getLastName());
-    person.setCountry(Country.valueOf(personDto.getCountry().name()));
-    person.setDateOfBirth(personDto.getDateOfBirth());
-    return person;
-}
+        if (personDto.getId() != null) {
+            person.setId(Long.valueOf(personDto.getId()));
+        }
+        person.setName(personDto.getName());
+        person.setLastName(personDto.getLastName());
+        person.setCountry(Country.valueOf(personDto.getCountry().name()));
+        person.setDateOfBirth(personDto.getDateOfBirth());
+        return person;
+    }
 
 }

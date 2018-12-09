@@ -1,5 +1,6 @@
 package pl.sda.rental.movies.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,7 +13,8 @@ public class MovieDto {
     String title;
     int length;
     int productionDate;
-    CountryDto country;
+    @JsonProperty("country")
+    CountryDto countryDto;
     List<GenreDto> genres;
     List<PersonDto> directors;
     List<PersonDto> cast;

@@ -19,7 +19,10 @@ public class MovieBuilderService {
         result.setTitle(movieDto.getTitle());
         result.setProductionDate(movieDto.getProductionDate());
         result.setLength(movieDto.getLength());
-        result.setId(Long.valueOf(movieDto.getId()));
+
+        if(movieDto.getId() !=null) {
+            result.setId(Long.valueOf(movieDto.getId()));
+        }
 
         List<Person> directors = movieDto.getDirectors().stream()
                 .map(x -> personBuilderService.entityFromDto(x))
