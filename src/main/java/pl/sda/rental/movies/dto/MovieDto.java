@@ -1,7 +1,12 @@
-package pl.sda.rental.dto;
+package pl.sda.rental.movies.dto;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
+@Getter
+@Setter
 public class MovieDto {
     String id;
     String title;

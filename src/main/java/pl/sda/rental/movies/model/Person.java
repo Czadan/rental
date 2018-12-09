@@ -1,17 +1,19 @@
-package pl.sda.rental.model;
+package pl.sda.rental.movies.model;
 
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name ="PERSONS" )
+@Table(name = "PERSONS")
 @Getter
 @Setter
 class Person {
-    String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
+
     String name;
     String lastName;
     Country country;

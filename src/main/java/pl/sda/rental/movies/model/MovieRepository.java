@@ -1,4 +1,4 @@
-package pl.sda.rental.model;
+package pl.sda.rental.movies.model;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

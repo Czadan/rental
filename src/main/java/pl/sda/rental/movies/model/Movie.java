@@ -1,4 +1,4 @@
-package pl.sda.rental.model;
+package pl.sda.rental.movies.model;
 
 
 import lombok.Getter;
@@ -25,6 +25,7 @@ class Movie {
     private Country country;
 
     @Enumerated(EnumType.STRING)
+    @ElementCollection(targetClass = Genre.class)
     List<Genre> genres;
 
     @ManyToMany
