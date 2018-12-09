@@ -26,7 +26,7 @@ public class MovieBuilderService {
                 .collect(Collectors.toList());
 
         List<Person> cast = movieDto.getCast().stream()
-                .map(x -> personBuilderService.entityFromDto())
+                .map(x -> personBuilderService.entityFromDto(x))
                 .collect(Collectors.toList());
         result.setDirectors(directors);
         result.setCast(cast);

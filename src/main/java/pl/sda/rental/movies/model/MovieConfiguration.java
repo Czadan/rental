@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Configuration;
 public class MovieConfiguration {
 
     @Bean
-    MovieFacade movieFacade(MovieRepository movieRepository){
-        return new MovieFacade(movieRepository);
+    MovieFacade movieFacade(MovieRepository movieRepository, MovieBuilderService movieBuilderService){
+        return new MovieFacade(movieRepository, movieBuilderService);
     }
 
     @Bean
